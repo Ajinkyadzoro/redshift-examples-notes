@@ -1,0 +1,40 @@
+1) Columnar DB are better for compression
+2) Better compression means better Disko-IO
+3) OLAP - Write once and read many
+4) Redshift uses PostGreSQL 8.0.2
+5) 3 components of redshift cluster are
+	A) Leader node
+	B) Compute node
+	C) Node slices which are part of the compute node.
+
+
+
+Lecture 9:
+===========================================================================================
+
+1) Databases: It is a collection of different objects like schemas,tables etc.
+
+2) Schemas: It consist of tables as well as other kind of named objects, by default a DB has a single schema which is PUBLIC. you can use schemas to Group database objects under common name. It is similar to directories of OS. 
+except schemas can not have nested schemas within it.
+
+3) Tables: When you load data into tables, redshift distributes the rows of the tables by the tables distribution style.
+Number of node slices also depend on the number of nodes into the cluster.
+
+4) Views: It is like a wrapper that binds the complex SQL query.
+
+5) UDFs: User defined functions, can be written in Both SQL and Python
+
+
+Lecture 10:
+===========================================================================================
+
+Node types
+1) ds2.xlarge
+2) ds2.8xlarge
+
+1) dc1.large
+1) dc1.8xlarge
+1) dc2.large
+1) dc2.8xlarge
+
+( 1-> previous gen, 2-> current generation)
