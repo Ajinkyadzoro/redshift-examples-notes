@@ -44,3 +44,19 @@ Lecture 31:
 
 1) If you create a table with '#' prefix it will create a temporary table.
 2) Temporary tables are only valid for that session.
+
+Lecture 32:
+===========================================================================================
+
+Choosing the right Distribution Styles
+The motive in selecting a table distribution style is to minimize the impact of the redistribution by relocating the data where it was prior to the query execution. 
+Choosing the right KEY is not as straightforward as it may seem. In fact, setting wrong DISTKEY can even worsen the query performance.
+
+Choose columns used in the query that leads to least skewness as the DISTKEY. The good choice is the column with maximum distinct values, such as the timestamp. Avoid columns with few distinct values, such as months of the year, payment card types.
+
+If the table(e.g. fact table) is highly de-normalised and no JOIN is required, choose the EVEN style.
+
+Choose ALL style for small tables that do not often change. For example, a table containing telephone ISD codes against the country name.
+
+It is beneficial to select a KEY distribution if a table is used in JOINS. Also,  consider the other joining tables and their distribution style.
+If one particular node contains the skew data, the processing on this node will be slower. This results in much longer total query processing time. This query under skewed configuration may take even longer than the query made against the table without a DISTKEY
