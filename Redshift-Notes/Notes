@@ -38,3 +38,9 @@ Node types
 1) dc2.8xlarge
 
 ( 1-> previous gen, 2-> current generation)
+
+Lecture 31:
+===========================================================================================
+
+1) If you create a table with '#' prefix it will create a temporary table.
+2) Temporary tables are only valid for that session.
