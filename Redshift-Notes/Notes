@@ -60,3 +60,26 @@ Choose ALL style for small tables that do not often change. For example, a table
 
 It is beneficial to select a KEY distribution if a table is used in JOINS. Also,  consider the other joining tables and their distribution style.
 If one particular node contains the skew data, the processing on this node will be slower. This results in much longer total query processing time. This query under skewed configuration may take even longer than the query made against the table without a DISTKEY
+
+
+Lecture 33:
+===========================================================================================
+
+Copy command is atomic and transactional.
+
+If copy command fails, the entire transaction is aborted and all changes are rolled back.
+
+Following are the few Data Load Operations options
+
+1) COMPROWS :- It takes samples of total dataset for the compression analysis purpose.
+
+2) COMPUPDATE :- Controls whether compression encoding are automatically applied during a copy.
+
+3) MAXERROR :- Acts as a threshold for loading error, if set to 0 then COPY will fail at the first attempt.
+
+4) NOLOAD :- Checks the validity of the data file before loading. It will not load ant\y data. only cheks the validity.
+
+
+
+
+
